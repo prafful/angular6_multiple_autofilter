@@ -1,0 +1,29 @@
+
+Name:<input type="text" [(ngModel)]="searchName">{{searchName}}
+<br>
+Username:<input type="text" [(ngModel)]="searchUserName">{{searchUserName}}
+<table border="1">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Username</th>
+      <th>Email</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let user of users | searchPipe:searchName:searchUserName">
+      <td>{{user.id}}</td>
+      <td>{{user.name}}</td>
+      <td>{{user.username}}</td>
+      <td>{{user.email}}</td>
+    </tr>
+   <!--  <tr *ngFor="let user of users | searchPipe:searchName">
+      <td>{{user.id}}</td>
+      <td>{{user.name}}</td>
+      <td>{{user.username}}</td>
+      <td>{{user.email}}</td>
+    </tr> -->
+  </tbody>
+
+</table>
